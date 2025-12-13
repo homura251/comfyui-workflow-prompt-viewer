@@ -445,6 +445,34 @@ class ComfyUI(BaseFormat):
                     node += last_node1 + last_node2
                 except:
                     print("comfyUI ConditioningCombine error")
+            case node_type if node_type in ["Any Switch (rgthree)", "SwitchByIndex", "SwitchByIndex (Mixlab)"]:
+                try:
+                    flow = inputs
+                    node = []
+                    str_results = []
+                    dict_results = {}
+                    has_flow = False
+                    for value in inputs.values():
+                        if isinstance(value, list):
+                            res = self._comfy_traverse(prompt, value[0])
+                            if isinstance(res, str):
+                                str_results.append(res)
+                            elif isinstance(res, dict):
+                                dict_results.update(res)
+                            elif isinstance(res, tuple):
+                                has_flow = True
+                                f, n = res
+                                flow = merge_dict(flow, f)
+                                node += n
+                    if str_results:
+                        return ", ".join(str_results)
+                    if dict_results:
+                        return dict_results
+                    if has_flow:
+                        return flow, node
+                    return flow, node
+                except:
+                    print("comfyUI Switch error")
             # SD Prompt Reader Node
             case "SDPromptReader":
                 try:

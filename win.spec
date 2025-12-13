@@ -4,11 +4,15 @@
 block_cipher = None
 
 
+import os
+import customtkinter
+ctk_path = os.path.dirname(customtkinter.__file__)
+
 a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[('sd_prompt_reader/resources', 'sd_prompt_reader/resources'), ('venv/lib/site-packages/customtkinter', 'customtkinter')],
+    datas=[('sd_prompt_reader/resources', 'sd_prompt_reader/resources'), (ctk_path, 'customtkinter')],
     hiddenimports=['sd_prompt_reader'],
     hookspath=['.'],
     hooksconfig={},
