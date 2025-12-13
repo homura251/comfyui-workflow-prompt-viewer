@@ -1,18 +1,17 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+from PyInstaller.utils.hooks import collect_data_files
 
 block_cipher = None
 
-
-import os
-import customtkinter
-ctk_path = os.path.dirname(customtkinter.__file__)
+# CustomTkinter ships theme/font assets that must be bundled.
+ctk_datas = collect_data_files("customtkinter")
 
 a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[('sd_prompt_reader/resources', 'sd_prompt_reader/resources'), (ctk_path, 'customtkinter')],
+    datas=[('sd_prompt_reader/resources', 'sd_prompt_reader/resources')] + ctk_datas,
     hiddenimports=['sd_prompt_reader'],
     hookspath=['.'],
     hooksconfig={},

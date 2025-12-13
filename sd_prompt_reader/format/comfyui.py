@@ -67,7 +67,13 @@ class ComfyUI(BaseFormat):
     def _comfy_png(self):
         self._prompt = self._info.get("prompt", {})
         self._workflow = self._info.get("workflow", {})
-        prompt_json = json.loads(str(self._prompt))
+
+        # Pillow's PNG metadata values are typically strings, but some tooling
+        # may provide already-parsed dicts.
+        if isinstance(self._prompt, (dict, list)):
+            prompt_json = self._prompt
+        else:
+            prompt_json = json.loads(str(self._prompt))
 
         # find end node of each flow
         end_nodes = list(
@@ -323,6 +329,8 @@ class ComfyUI(BaseFormat):
                                     self._negative = traverse_result[1]
                                 elif isinstance(traverse_result, dict):
                                     return traverse_result
+                                elif isinstance(traverse_result, str):
+                                    return traverse_result
                                 return
                             elif isinstance(inputs["text"], str):
                                 return inputs.get("text")
@@ -445,34 +453,6 @@ class ComfyUI(BaseFormat):
                     node += last_node1 + last_node2
                 except:
                     print("comfyUI ConditioningCombine error")
-            case node_type if node_type in ["Any Switch (rgthree)", "SwitchByIndex", "SwitchByIndex (Mixlab)"]:
-                try:
-                    flow = inputs
-                    node = []
-                    str_results = []
-                    dict_results = {}
-                    has_flow = False
-                    for value in inputs.values():
-                        if isinstance(value, list):
-                            res = self._comfy_traverse(prompt, value[0])
-                            if isinstance(res, str):
-                                str_results.append(res)
-                            elif isinstance(res, dict):
-                                dict_results.update(res)
-                            elif isinstance(res, tuple):
-                                has_flow = True
-                                f, n = res
-                                flow = merge_dict(flow, f)
-                                node += n
-                    if str_results:
-                        return ", ".join(str_results)
-                    if dict_results:
-                        return dict_results
-                    if has_flow:
-                        return flow, node
-                    return flow, node
-                except:
-                    print("comfyUI Switch error")
             # SD Prompt Reader Node
             case "SDPromptReader":
                 try:
@@ -495,6 +475,29 @@ class ComfyUI(BaseFormat):
                     return inputs.get("seed")
                 except:
                     print("comfyUI CR Seed error")
+
+            # WeiLin Prompt All In One (custom)
+            case "WeiLinComfyUIPromptAllInOneGreat":
+                try:
+                    # This node outputs a STRING; downstream CLIPTextEncode may
+                    # link to it.
+                    return {"positive": inputs.get("positive")}
+                except:
+                    print("comfyUI WeiLinComfyUI prompt error")
+
+            # rgthree / other switch nodes (pass-through)
+            case node_type if isinstance(node_type, str) and (
+                node_type.startswith("Any Switch") or node_type == "SwitchByIndex"
+            ):
+                try:
+                    for key, value in inputs.items():
+                        if isinstance(value, list) and value:
+                            traverse_result = self._comfy_traverse(prompt, value[0])
+                            if isinstance(traverse_result, (str, dict, tuple)):
+                                return traverse_result
+                    return
+                except:
+                    print("comfyUI switch node error")
             case _:
                 try:
                     last_flow = {}
@@ -525,6 +528,21 @@ class ComfyUI(BaseFormat):
                             return result
                         elif isinstance(result, list):
                             last_flow, last_node = result
+
+                    # Generic pass-through for unknown nodes: if they have any
+                    # upstream link, try the first one. This helps with many
+                    # custom nodes that simply forward their inputs.
+                    if not last_node and not last_flow:
+                        for _, value in inputs.items():
+                            if isinstance(value, list) and value:
+                                traverse_result = self._comfy_traverse(prompt, value[0])
+                                if isinstance(traverse_result, str):
+                                    return traverse_result
+                                if isinstance(traverse_result, tuple):
+                                    return traverse_result
+                                if isinstance(traverse_result, dict):
+                                    last_flow, last_node = traverse_result, []
+                                    break
                     flow = merge_dict(flow, last_flow)
                     node += last_node
                 except:
