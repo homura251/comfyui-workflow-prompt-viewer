@@ -157,3 +157,8 @@ cython_debug/
 /tests/
 /pyinstaller/
 /material/
+
+# Local test artifacts (do not commit)
+ComfyUI_*.png
+SD_Prompt_Reader_*.zip
+pre_filter_backup.bundle
