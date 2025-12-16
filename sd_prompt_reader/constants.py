@@ -102,11 +102,11 @@ TOOLTIP = {
     "view_tab": "View Clip G, Clip L and Refiner prompt in one textbox",
 }
 URL = {
-    "release": "https://api.github.com/repos/receyuki/stable-diffusion-prompt-reader/releases/latest",
+    "release": "https://api.github.com/repos/homura251/comfyui-workflow-prompt-viewer/releases/latest",
     "format": (
-        "https://github.com/receyuki/stable-diffusion-prompt-reader#supported-formats"
+        "https://github.com/homura251/comfyui-workflow-prompt-viewer#supported-formats"
     ),
-    "comfyui": "https://github.com/receyuki/stable-diffusion-prompt-reader#comfyui",
+    "comfyui": "https://github.com/homura251/comfyui-workflow-prompt-viewer#comfyui",
 }
 DEFAULT_GRAY = "#8E8E93"
 ACCESSIBLE_GRAY = ("#6C6C70", "#AEAEB2")
