@@ -13,7 +13,7 @@ fi
 
 echo "Please report this issue to GitHub"
 echo ""
-echo "ERRORURL: https://github.com/homura251/comfyui-workflow-prompt-viewer/issues"
+echo "ERRORURL: https://github.com/receyuki/stable-diffusion-prompt-reader/issues"
 exit
 
 

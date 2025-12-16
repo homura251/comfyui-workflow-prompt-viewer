@@ -1,12 +1,12 @@
 <div align="center">
-    <img alt="icon" src="https://github.com/homura251/comfyui-workflow-prompt-viewer/raw/master/sd_prompt_reader/resources/icon-cube.png" width=20% height=20%>
+    <img alt="icon" src="https://github.com/receyuki/stable-diffusion-prompt-reader/raw/master/sd_prompt_reader/resources/icon-cube.png" width=20% height=20%>
     <h1>Stable Diffusion Prompt Reader</h1>
-    <a href="https://github.com/homura251/comfyui-workflow-prompt-viewer/releases/latest">
-        <img alt="GitHub releases" src="https://img.shields.io/github/downloads/homura251/comfyui-workflow-prompt-viewer/total"></a>
-    <a href="https://github.com/homura251/comfyui-workflow-prompt-viewer/blob/master/LICENSE">
-        <img alt="GitHub" src="https://img.shields.io/github/license/homura251/comfyui-workflow-prompt-viewer"></a>
-    <a href="https://github.com/homura251/comfyui-workflow-prompt-viewer/releases/latest">
-        <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/homura251/comfyui-workflow-prompt-viewer"></a>
+    <a href="https://github.com/receyuki/stable-diffusion-prompt-reader/releases/latest">
+        <img alt="GitHub releases" src="https://img.shields.io/github/downloads/receyuki/stable-diffusion-prompt-reader/total"></a>
+    <a href="https://github.com/receyuki/stable-diffusion-prompt-reader/blob/master/LICENSE">
+        <img alt="GitHub" src="https://img.shields.io/github/license/receyuki/stable-diffusion-prompt-reader"></a>
+    <a href="https://github.com/receyuki/stable-diffusion-prompt-reader/releases/latest">
+        <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/receyuki/stable-diffusion-prompt-reader"></a>
     <a href="https://pypi.org/project/sd-prompt-reader/">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/sd-prompt-reader"></a>
     <a href="https://github.com/psf/black">
@@ -14,7 +14,7 @@
     <img alt="platform" src="https://img.shields.io/badge/platform-windows%20%7C%20macos%20%7C%20linux-lightgrey">
     <br><br>
 
-[简体中文](https://github.com/homura251/comfyui-workflow-prompt-viewer/blob/master/README.zh-Hans.md) | [English](https://github.com/homura251/comfyui-workflow-prompt-viewer/blob/master/README.md)
+[简体中文](https://github.com/receyuki/stable-diffusion-prompt-reader/blob/master/README.zh-Hans.md) | [English](https://github.com/receyuki/stable-diffusion-prompt-reader/blob/master/README.md)
 
 A simple standalone viewer for reading prompt from Stable Diffusion generated image outside the webui.
     <br>
@@ -28,7 +28,7 @@ A simple standalone viewer for reading prompt from Stable Diffusion generated im
     <a href="#faq">FAQ</a> •
     <a href="#credits">Credits</a>
   </p>
-    <img src="https://github.com/homura251/comfyui-workflow-prompt-viewer/raw/master/images/screenshot_v134.png">
+    <img src="https://github.com/receyuki/stable-diffusion-prompt-reader/raw/master/images/screenshot_v134.png">
 </div>
 
 > [!TIP]
@@ -78,15 +78,15 @@ A simple standalone viewer for reading prompt from Stable Diffusion generated im
 
 ## Download
 ### For Windows users
-Download executable from [GitHub Releases](https://github.com/homura251/comfyui-workflow-prompt-viewer/releases/latest)
+Download executable from [GitHub Releases](https://github.com/receyuki/stable-diffusion-prompt-reader/releases/latest)
 ### For macOS users
-Download executable from [GitHub Releases](https://github.com/homura251/comfyui-workflow-prompt-viewer/releases/latest)
+Download executable from [GitHub Releases](https://github.com/receyuki/stable-diffusion-prompt-reader/releases/latest)
 #### Install via Homebrew Cask
 You may also install SD Prompt Reader via [Homebrew](http://brew.sh/) cask.  
 ```bash
 brew install --no-quarantine receyuki/sd-prompt-reader/sd-prompt-reader
 ```
-The parameter `--no-quarantine` is used since the SD Prompt Reader is currently unsigned as I mentioned [here](https://github.com/homura251/comfyui-workflow-prompt-viewer#sd-prompt-readerapp-is-damaged-and-cant-be-opened-you-should-move-it-to-the-trash)
+The parameter `--no-quarantine` is used since the SD Prompt Reader is currently unsigned as I mentioned [here](https://github.com/receyuki/stable-diffusion-prompt-reader#sd-prompt-readerapp-is-damaged-and-cant-be-opened-you-should-move-it-to-the-trash)
 ### For Linux users (not regularly tested)
 ~~I'm pretty sure linux users can figure things out without an executable.~~
 - The minimum version of Python required is 3.10
@@ -108,7 +108,7 @@ For the CLI, please use `sd-prompt-reader-cli`.
 #### Run source code manually
 1. Clone this repo.
     ```bash
-    git clone https://github.com/homura251/comfyui-workflow-prompt-viewer.git
+    git clone https://github.com/receyuki/stable-diffusion-prompt-reader.git
     ```
    or download repo as a zip.
 2. CD to the directory and install dependencies.
@@ -134,13 +134,13 @@ OR
 ### Export prompt to a text file
 - Click "Export" will generate a txt file alongside the image file.
 - To save to another location, click the expand arrow and click "select directory".  
-![export](https://github.com/homura251/comfyui-workflow-prompt-viewer/raw/master/images/export.png)
+![export](https://github.com/receyuki/stable-diffusion-prompt-reader/raw/master/images/export.png)
 
 ### Remove prompt from image
 - Click "Clear" will generate a new image file with suffix "_data_removed" alongside the original image file.
 - To save to another location, click the expand arrow and click "select directory".
 - To overwrite the original image file, click the expand arrow and click "overwrite the original image".  
-![remove](https://github.com/homura251/comfyui-workflow-prompt-viewer/raw/master/images/remove.png)
+![remove](https://github.com/receyuki/stable-diffusion-prompt-reader/raw/master/images/remove.png)
 
 ### Edit image
 > [!NOTE]
@@ -152,7 +152,7 @@ OR
 - Click "Save" will generate a edited image file with suffix "_edited" alongside the original image file.
 - To save to another location, click the expand arrow and click "select directory".
 - To overwrite the original image file, click the expand arrow and click "overwrite the original image".  
-![save](https://github.com/homura251/comfyui-workflow-prompt-viewer/raw/master/images/save.png)
+![save](https://github.com/receyuki/stable-diffusion-prompt-reader/raw/master/images/save.png)
 
 ### Copy as single line prompt
 Copy image prompt and setting in a format that can be read by [Prompts from file or textbox](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompts-from-file-or-textbox) 
@@ -173,7 +173,7 @@ The following parameters are supported:
 
 - Click the expand arrow and click "single line prompt".
 - Paste it into the textbox below the webui script "Prompts from file or textbox".  
-![single line prompt](https://github.com/homura251/comfyui-workflow-prompt-viewer/raw/master/images/single_line_prompt.png)
+![single line prompt](https://github.com/receyuki/stable-diffusion-prompt-reader/raw/master/images/single_line_prompt.png)
 
 ### ComfyUI SDXL workflow
 > [!NOTE]
@@ -183,7 +183,7 @@ The following parameters are supported:
 If the image's workflow includes multiple sets of SDXL prompts, 
 namely Clip G(text_g), Clip L(text_l), and Refiner, the SD Prompt Reader will switch to the multi-set prompt display mode as shown in the image below. 
 There are two interface options available for the multi-set prompt display mode, and you can switch between them using buttons.  
-![comfyui_sdxl.png](https://github.com/homura251/comfyui-workflow-prompt-viewer/raw/master/images/comfyui_sdxl.png)
+![comfyui_sdxl.png](https://github.com/receyuki/stable-diffusion-prompt-reader/raw/master/images/comfyui_sdxl.png)
 
 ## CLI
 A CLI tool for reading, modifying, and clearing metadata is provided. 
@@ -265,7 +265,7 @@ with a suffix added to the original filename.
 2. Due to the nature of ComfyUI, all nodes and flowcharts in the workflow are stored in the image, including those that are not being used. Also, a flowchart can have multiple branches, inputs and outputs.
 (e.g. output hires. fixed image and original image simultaneously in a single flowchart)
 SD Prompt Reader will traverse all flowcharts and branches and display the longest branch with complete input and output.  
-3. [ComfyUI SDXL workflow](https://github.com/homura251/comfyui-workflow-prompt-viewer#comfyui-sdxl-workflow)
+3. [ComfyUI SDXL workflow](https://github.com/receyuki/stable-diffusion-prompt-reader#comfyui-sdxl-workflow)
 ### Easy Diffusion
 By default, Easy Diffusion does not write metadata to images. Please change the _Metadata format_ in settings to _embed_ to write the metadata to images
 ### Fooocus-MRE

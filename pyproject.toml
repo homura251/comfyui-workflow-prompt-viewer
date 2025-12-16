@@ -5,9 +5,9 @@ description = "A simple standalone viewer for reading prompt from Stable Diffusi
 authors = ["receyuki <receyuki@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/homura251/comfyui-workflow-prompt-viewer"
-repository = "https://github.com/homura251/comfyui-workflow-prompt-viewer"
-documentation = "https://github.com/homura251/comfyui-workflow-prompt-viewer"
+homepage = "https://github.com/receyuki/stable-diffusion-prompt-reader"
+repository = "https://github.com/receyuki/stable-diffusion-prompt-reader"
+documentation = "https://github.com/receyuki/stable-diffusion-prompt-reader"
 packages = [{include = "sd_prompt_reader"}]
 
 classifiers = [
@@ -17,7 +17,7 @@ classifiers = [
 ]
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/homura251/comfyui-workflow-prompt-viewer/issues"
+"Bug Tracker" = "https://github.com/receyuki/stable-diffusion-prompt-reader/issues"
 
 [tool.poetry.dependencies]
 python = "^3.10"

@@ -1,12 +1,12 @@
 <div align="center">
-    <img alt="icon" src="https://github.com/homura251/comfyui-workflow-prompt-viewer/raw/master/sd_prompt_reader/resources/icon-cube.png" width=20% height=20%>
+    <img alt="icon" src="https://github.com/receyuki/stable-diffusion-prompt-reader/raw/master/sd_prompt_reader/resources/icon-cube.png" width=20% height=20%>
     <h1>Stable Diffusion Prompt Reader</h1>
-    <a href="https://github.com/homura251/comfyui-workflow-prompt-viewer/releases/latest">
-        <img alt="GitHub releases" src="https://img.shields.io/github/downloads/homura251/comfyui-workflow-prompt-viewer/total"></a>
-    <a href="https://github.com/homura251/comfyui-workflow-prompt-viewer/blob/master/LICENSE">
-        <img alt="GitHub" src="https://img.shields.io/github/license/homura251/comfyui-workflow-prompt-viewer"></a>
-    <a href="https://github.com/homura251/comfyui-workflow-prompt-viewer/releases/latest">
-        <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/homura251/comfyui-workflow-prompt-viewer"></a>
+    <a href="https://github.com/receyuki/stable-diffusion-prompt-reader/releases/latest">
+        <img alt="GitHub releases" src="https://img.shields.io/github/downloads/receyuki/stable-diffusion-prompt-reader/total"></a>
+    <a href="https://github.com/receyuki/stable-diffusion-prompt-reader/blob/master/LICENSE">
+        <img alt="GitHub" src="https://img.shields.io/github/license/receyuki/stable-diffusion-prompt-reader"></a>
+    <a href="https://github.com/receyuki/stable-diffusion-prompt-reader/releases/latest">
+        <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/receyuki/stable-diffusion-prompt-reader"></a>
     <a href="https://pypi.org/project/sd-prompt-reader/">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/sd-prompt-reader"></a>
     <a href="https://github.com/psf/black">
@@ -14,7 +14,7 @@
     <img alt="platform" src="https://img.shields.io/badge/platform-windows%20%7C%20macos%20%7C%20linux-lightgrey">
     <br><br>
 
-[English](https://github.com/homura251/comfyui-workflow-prompt-viewer/blob/master/README.md) | [简体中文](https://github.com/homura251/comfyui-workflow-prompt-viewer/blob/master/README.zh-Hans.md)
+[English](https://github.com/receyuki/stable-diffusion-prompt-reader/blob/master/README.md) | [简体中文](https://github.com/receyuki/stable-diffusion-prompt-reader/blob/master/README.zh-Hans.md)
 
 一个独立的简易 AI 图片 prompt 查看器，用于在不依赖 webui 的情况下提取由 Stable Diffusion 生成图片内包含的 prompt
     <br>
@@ -76,15 +76,15 @@
 
 ## 下载
 ### Windows 用户
-从 [GitHub Releases](https://github.com/homura251/comfyui-workflow-prompt-viewer/releases/latest) 下载可执行文件
+从 [GitHub Releases](https://github.com/receyuki/stable-diffusion-prompt-reader/releases/latest) 下载可执行文件
 ### macOS 用户
-从 [GitHub Releases](https://github.com/homura251/comfyui-workflow-prompt-viewer/releases/latest) 下载可执行文件
+从 [GitHub Releases](https://github.com/receyuki/stable-diffusion-prompt-reader/releases/latest) 下载可执行文件
 #### 通过 Homebrew Cask 安装
 你也可以通过 [Homebrew](http://brew.sh/) cask 安装 SD Prompt Reader.  
 ```bash
 brew install --no-quarantine receyuki/sd-prompt-reader/sd-prompt-reader
 ```
-使用 `--no-quarantine` 参数是因为目前 SD Prompt Reader 并未签名, 具体原因请查看[这里](https://github.com/homura251/comfyui-workflow-prompt-viewer/blob/master/README.zh-Hans.md#sd-prompt-readerapp-%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E6%82%A8%E5%BA%94%E8%AF%A5%E5%B0%86%E5%AE%83%E7%A7%BB%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93)
+使用 `--no-quarantine` 参数是因为目前 SD Prompt Reader 并未签名, 具体原因请查看[这里](https://github.com/receyuki/stable-diffusion-prompt-reader/blob/master/README.zh-Hans.md#sd-prompt-readerapp-%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E6%82%A8%E5%BA%94%E8%AF%A5%E5%B0%86%E5%AE%83%E7%A7%BB%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93)
 
 ### Linux 用户 (不定期测试)
 ~~我很确定 Linux 用户可以在没有可执行文件的情况下搞明白怎么用~~
@@ -107,7 +107,7 @@ pipx install sd-prompt-reader
 #### 手动运行源码
 1. Clone repo
     ```bash
-    git clone https://github.com/homura251/comfyui-workflow-prompt-viewer.git
+    git clone https://github.com/receyuki/stable-diffusion-prompt-reader.git
     ```
    或者直接下载 repo 为 zip 格式.
 2. CD 到文件夹并安装依赖
@@ -181,7 +181,7 @@ pipx install sd-prompt-reader
 也就是 Clip G(text_g), Clip L(text_l) 和 Refiner 时, 
 SD Prompt Reader 会切换到如下图所示的多组 prompt 显示模式.
 多组 prompt 显示模式有两种界面供你选择，你可以通过按钮来进行切换.  
-![comfyui_sdxl.png](https://github.com/homura251/comfyui-workflow-prompt-viewer/raw/master/images/comfyui_sdxl.png)
+![comfyui_sdxl.png](https://github.com/receyuki/stable-diffusion-prompt-reader/raw/master/images/comfyui_sdxl.png)
 
 ## 命令行
 可用于读取、修改和清除图像的元数据的命令行工具
@@ -261,7 +261,7 @@ SD Prompt Reader 会切换到如下图所示的多组 prompt 显示模式.
 2. 由于 ComfyUI 的特性, workflow 中的所有节点和流程都存储在图像中, 包括没有被使用的. 并且一个流程可以有多个分支，多个输入和输出.
 (e.g. 在一个流程中同时生成原图和 hires. fix 后的图像)
 SD Prompt Reader 会遍历所有的流程和分支，并显示拥有完整的输入和输出的最长分支.
-3. [ComfyUI SDXL 流程](https://github.com/homura251/comfyui-workflow-prompt-viewer/blob/master/README.zh-Hans.md#comfyui-sdxl-%E6%B5%81%E7%A8%8B)
+3. [ComfyUI SDXL 流程](https://github.com/receyuki/stable-diffusion-prompt-reader/blob/master/README.zh-Hans.md#comfyui-sdxl-%E6%B5%81%E7%A8%8B)
 ### Easy Diffusion
 默认设置下, Easy Diffusion 不会将 prompt 写入图片. 请更改设置中的 _Metadata format_ 为 _embed_ 来写入 prompt 到图片中.
 ### Fooocus-MRE
